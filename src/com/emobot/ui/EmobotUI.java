@@ -1,29 +1,24 @@
 package com.emobot.ui;
+import java.awt.Dimension;
 import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.JFrame;
-import javax.swing.JButton;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
-import javax.swing.JTextArea;
-
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
+import java.util.ArrayList;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JList;
-import javax.swing.SwingConstants;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 import com.emobot.charts.XYLineChart;
 import com.emobot.interactApi.EPANode;
 import com.emobot.interactApi.EPAOutput;
 import com.emobot.response.RespondAPI;
-
-import java.awt.Font;
-import java.util.ArrayList;
-import javax.swing.JScrollPane;
 
 
 public class EmobotUI {
@@ -50,7 +45,11 @@ public class EmobotUI {
 	private JButton btnChatbot3;
 	private JButton btnChatbot4;
 	
-	private ArrayList<EPANode> list0 = new ArrayList<EPANode>();
+	private ArrayList<EPANode> list01 = new ArrayList<EPANode>();
+	private ArrayList<EPANode> list02 = new ArrayList<EPANode>();
+	private ArrayList<EPANode> list03 = new ArrayList<EPANode>();
+	private ArrayList<EPANode> list04 = new ArrayList<EPANode>();
+	private ArrayList<EPANode> list00 = new ArrayList<EPANode>();
 	private ArrayList<EPANode> list1 = new ArrayList<EPANode>();
 	private ArrayList<EPANode> list2 = new ArrayList<EPANode>();
 	private ArrayList<EPANode> list3 = new ArrayList<EPANode>();
@@ -104,21 +103,38 @@ public class EmobotUI {
 						RespondAPI respondAPI = new RespondAPI(msg);
 						ArrayList<String> responses = new ArrayList<String>();
 						ArrayList<EPANode> responseEpas = new ArrayList<EPANode>();
-						responses.add(respondAPI.getJsonResponseFromChatbot1());
-						responses.add(respondAPI.getJsonResponseFromChatbot2());
-						responses.add(respondAPI.getJsonResponseFromChatbot3());
-						responses.add(respondAPI.getJsonResponseFromChatbot4());
-						
-						for(String temp: responses){
-							responseEpas.add(EPAOutput.getEPAValue(temp));
-						}
+						String response1 = respondAPI.getJsonResponseFromChatbot1();
+						EPANode tempNode1 = EPAOutput.getEPAValue(response1);
+						String response2 = respondAPI.getJsonResponseFromChatbot2();
+						EPANode tempNode2 = EPAOutput.getEPAValue(response2);
+						String response3 = respondAPI.getJsonResponseFromChatbot3();
+						EPANode tempNode3 = EPAOutput.getEPAValue(response3);
+						String response4 = respondAPI.getJsonResponseFromChatbot4();
+						EPANode tempNode4 = EPAOutput.getEPAValue(response4);
+						responses.add(response1);
+						responses.add(response2);
+						responses.add(response3);
+						responses.add(response4);
+						responseEpas.add(tempNode1);
+						responseEpas.add(tempNode2);
+						responseEpas.add(tempNode3);
+						responseEpas.add(tempNode4);
 						
 						int index = EPAOutput.getClosest(responseEpas, epaNode);
-						
 						txtFullEpa.setText(txtFullEpa.getText() + "\n BOT: " + responseEpas.get(index));
 						txtFullChat.setText(txtFullChat.getText() + "\n BOT: " + responses.get(index));
 						fullChat0 = txtFullChat.getText();
 						fullEpa0 = txtFullEpa.getText();
+						list00.add(epaNode);
+						list01.add(epaNode);
+						list02.add(epaNode);
+						list03.add(epaNode);
+						list04.add(epaNode);
+						list00.add(responseEpas.get(index));
+						list01.add(tempNode1);
+						list02.add(tempNode2);
+						list03.add(tempNode3);
+						list04.add(tempNode4);
 					}
 					else if(context==1){
 						RespondAPI respondAPI = new RespondAPI(msg);
@@ -228,35 +244,103 @@ public class EmobotUI {
 				txtFullEpa.setText(fullEpa4);
 			}
 		});
+		btnEPAGraph0.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				ArrayList<ArrayList<EPANode>> listtt = new ArrayList<ArrayList<EPANode>>();
+				listtt.add(list00);
+				listtt.add(list01);
+				listtt.add(list02);
+				listtt.add(list03);
+				listtt.add(list04);
+				getEPAChartEmobot(listtt, "Chatbot 1:");
+			}
+		});
 		btnEPAGraph1.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				ArrayList<Double> elist = new ArrayList<Double>();
-				ArrayList<Double> plist = new ArrayList<Double>();
-				ArrayList<Double> alist = new ArrayList<Double>();
-				ArrayList<ArrayList<Double>> elistt = new ArrayList<ArrayList<Double>>();
-				ArrayList<ArrayList<Double>> plistt = new ArrayList<ArrayList<Double>>();
-				ArrayList<ArrayList<Double>> alistt = new ArrayList<ArrayList<Double>>();
-				
-				for(EPANode node: list1){
-					if(node==null){
-						elist.add((double) 0);
-						plist.add((double) 0);
-						alist.add((double) 0);
-					}
-					else{
-						elist.add(node.geteValue());
-						plist.add(node.getpValue());
-						alist.add(node.getaValue());
-					}
-				}
-				elistt.add(elist);
-				plistt.add(plist);
-				alistt.add(alist);
-				new XYLineChart("", elistt, plistt, alistt).setVisible(true);
+				getEPAChart(list1, "Chatbot 1:");
 			}
 		});
+		btnEPAGraph2.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				getEPAChart(list2, "Chatbot 2:");
+			}
+		});
+		btnEPAGraph3.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				getEPAChart(list3, "Chatbot 3:");
+			}
+		});
+		btnEPAGraph4.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				getEPAChart(list4, "Chatbot 4:");
+			}
+		});
+	}
+	
+	public void getEPAChartEmobot(ArrayList<ArrayList<EPANode>> list, String title){
+		ArrayList<ArrayList<Double>> elistt = new ArrayList<ArrayList<Double>>();
+		ArrayList<ArrayList<Double>> plistt = new ArrayList<ArrayList<Double>>();
+		ArrayList<ArrayList<Double>> alistt = new ArrayList<ArrayList<Double>>();
+		
+		for(ArrayList<EPANode> tempNode: list){
+			ArrayList<Double> elist = new ArrayList<Double>();
+			ArrayList<Double> plist = new ArrayList<Double>();
+			ArrayList<Double> alist = new ArrayList<Double>();
+			
+			for(EPANode node: tempNode){
+				if(node==null){
+					elist.add((double) 0);
+					plist.add((double) 0);
+					alist.add((double) 0);
+				}
+				else{
+					elist.add(node.geteValue());
+					plist.add(node.getpValue());
+					alist.add(node.getaValue());
+				}
+			}
+			
+			elistt.add(elist);
+			plistt.add(plist);
+			alistt.add(alist);
+		}
+		new XYLineChart(title+" ", elistt, plistt, alistt).setVisible(true);
+	}
+	
+	public void getEPAChart(ArrayList<EPANode> list, String title){
+		ArrayList<Double> elist = new ArrayList<Double>();
+		ArrayList<Double> plist = new ArrayList<Double>();
+		ArrayList<Double> alist = new ArrayList<Double>();
+		ArrayList<ArrayList<Double>> elistt = new ArrayList<ArrayList<Double>>();
+		ArrayList<ArrayList<Double>> plistt = new ArrayList<ArrayList<Double>>();
+		ArrayList<ArrayList<Double>> alistt = new ArrayList<ArrayList<Double>>();
+		
+		for(EPANode node: list){
+			if(node==null){
+				elist.add((double) 0);
+				plist.add((double) 0);
+				alist.add((double) 0);
+			}
+			else{
+				elist.add(node.geteValue());
+				plist.add(node.getpValue());
+				alist.add(node.getaValue());
+			}
+		}
+		elistt.add(elist);
+		plistt.add(plist);
+		alistt.add(alist);
+		new XYLineChart(title+" ", elistt, plistt, alistt).setVisible(true);
 	}
 	
 	public boolean isValidInput(){
@@ -268,12 +352,16 @@ public class EmobotUI {
 	public void justInitialize(){
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1223, 677);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		frame.setMinimumSize(new Dimension(500, 0));
+		frame.setMaximumSize(new Dimension(500, 500));
 		frame.getContentPane().setLayout(null);
 		
 		btnSendMessage = new JButton("Send Message");
 		btnSendMessage.setBounds(898, 551, 299, 75);
 		frame.getContentPane().add(btnSendMessage);
+		
+		frame.getRootPane().setDefaultButton(btnSendMessage);
 		
 		txtWriteYourMessage = new JTextField();
 		txtWriteYourMessage.setToolTipText("Write your message");
@@ -358,6 +446,7 @@ public class EmobotUI {
 		frame.getContentPane().add(scrollPane);
 		
 		txtFullEpa = new JTextArea();
+		txtFullEpa.setEditable(false);
 		txtFullEpa.setLineWrap(true);
 		txtFullEpa.setText("EPA VALUES OF THE CONVERSATION WITH Emobot:");
 		scrollPane.setViewportView(txtFullEpa);
@@ -367,6 +456,7 @@ public class EmobotUI {
 		frame.getContentPane().add(scrollPane_1);
 		
 		txtFullChat = new JTextArea();
+		txtFullChat.setEditable(false);
 		txtFullChat.setText("CONVERSATION WITH Emobot:");
 		scrollPane_1.setViewportView(txtFullChat);
 	}
