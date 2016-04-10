@@ -314,7 +314,9 @@ public class EmobotUI {
 			plistt.add(plist);
 			alistt.add(alist);
 		}
-		new XYLineChart(title+" ", elistt, plistt, alistt).setVisible(true);
+		XYLineChart chart = new XYLineChart(title+" ", elistt, plistt, alistt);
+		chart.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		chart.setVisible(true);
 	}
 	
 	public void getEPAChart(ArrayList<EPANode> list, String title){
@@ -340,7 +342,9 @@ public class EmobotUI {
 		elistt.add(elist);
 		plistt.add(plist);
 		alistt.add(alist);
-		new XYLineChart(title+" ", elistt, plistt, alistt).setVisible(true);
+		XYLineChart chart = new XYLineChart(title+" ", elistt, plistt, alistt);
+		chart.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		chart.setVisible(true);
 	}
 	
 	public boolean isValidInput(){
@@ -355,6 +359,7 @@ public class EmobotUI {
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.setMinimumSize(new Dimension(500, 0));
 		frame.setMaximumSize(new Dimension(500, 500));
+		frame.setTitle("Emobot - Emotional Chatbot");
 		frame.getContentPane().setLayout(null);
 		
 		btnSendMessage = new JButton("Send Message");
