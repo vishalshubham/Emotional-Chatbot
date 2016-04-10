@@ -23,6 +23,7 @@ import com.emobot.response.RespondAPI;
 
 import java.awt.Font;
 import java.util.ArrayList;
+import javax.swing.JScrollPane;
 
 
 public class EmobotUI {
@@ -43,9 +44,6 @@ public class EmobotUI {
 	private String fullEpa3 = "EPA VALUES FOR CONVERSATION WITH Chatbot 3:";
 	private String fullEpa4 = "EPA VALUES FOR CONVERSATION WITH Chatbot 4:";
 	
-	private JTextArea txtFullChat;
-	private JTextArea txtFullEpa;
-	
 	private JButton btnChatbot0;
 	private JButton btnChatbot1;
 	private JButton btnChatbot2;
@@ -64,6 +62,9 @@ public class EmobotUI {
 	private JButton btnEPAGraph2;
 	private JButton btnEPAGraph3;
 	private JButton btnEPAGraph4;
+	private JScrollPane scrollPane_1;
+	private JTextArea txtFullChat;
+	private JTextArea txtFullEpa;
 
 	/* Launch the application. */
 	public static void main(String[] args) {
@@ -266,101 +267,108 @@ public class EmobotUI {
 	
 	public void justInitialize(){
 		frame = new JFrame();
-		frame.setBounds(100, 100, 1223, 800);
+		frame.setBounds(100, 100, 1223, 677);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		btnSendMessage = new JButton("Send Message");
-		btnSendMessage.setBounds(948, 677, 211, 75);
+		btnSendMessage.setBounds(898, 551, 299, 75);
 		frame.getContentPane().add(btnSendMessage);
 		
 		txtWriteYourMessage = new JTextField();
 		txtWriteYourMessage.setToolTipText("Write your message");
-		txtWriteYourMessage.setBounds(10, 702, 928, 50);
+		txtWriteYourMessage.setBounds(10, 576, 878, 50);
 		frame.getContentPane().add(txtWriteYourMessage);
 		txtWriteYourMessage.setColumns(10);
 		
-		txtFullChat = new JTextArea();
-		txtFullChat.setBounds(396, 11, 542, 655);
-		frame.getContentPane().add(txtFullChat);
-		txtFullChat.setText(fullChat0);
-		
 		// Bot buttons
 		btnChatbot0 = new JButton("Emobot");
-		btnChatbot0.setBounds(948, 11, 127, 41);
+		btnChatbot0.setBounds(898, 11, 153, 41);
 		frame.getContentPane().add(btnChatbot0);
 		
 		btnChatbot1 = new JButton("Chatbot 1");
-		btnChatbot1.setBounds(948, 63, 127, 41);
+		btnChatbot1.setBounds(898, 63, 153, 41);
 		frame.getContentPane().add(btnChatbot1);
 		
 		btnChatbot2 = new JButton("Chatbot 2");
-		btnChatbot2.setBounds(948, 115, 127, 41);
+		btnChatbot2.setBounds(898, 115, 153, 41);
 		frame.getContentPane().add(btnChatbot2);
 		
 		btnChatbot3 = new JButton("Chatbot 3");
-		btnChatbot3.setBounds(948, 167, 127, 41);
+		btnChatbot3.setBounds(898, 167, 153, 41);
 		frame.getContentPane().add(btnChatbot3);
 		
 		btnChatbot4 = new JButton("Chatbot 4");
-		btnChatbot4.setBounds(948, 219, 127, 41);
+		btnChatbot4.setBounds(898, 219, 153, 41);
 		frame.getContentPane().add(btnChatbot4);
 		
 		// Action message Label
 		lblNewLabel = new JLabel("");
-		lblNewLabel.setBounds(10, 677, 493, 14);
+		lblNewLabel.setBounds(10, 551, 493, 14);
 		frame.getContentPane().add(lblNewLabel);
 		
 		// Index Labels
 		JLabel lblChatbotProgram = new JLabel("Index:");
 		lblChatbotProgram.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblChatbotProgram.setBounds(948, 310, 211, 27);
+		lblChatbotProgram.setBounds(898, 308, 299, 27);
 		frame.getContentPane().add(lblChatbotProgram);
 		
 		JLabel lblChatbotProgram_1 = new JLabel("Chatbot 1: Program O Bot");
-		lblChatbotProgram_1.setBounds(948, 386, 156, 27);
+		lblChatbotProgram_1.setBounds(898, 384, 299, 27);
 		frame.getContentPane().add(lblChatbotProgram_1);
 		
 		JLabel lblChatbotPersonality = new JLabel("Chatbot 2: Personality Forge Bot");
-		lblChatbotPersonality.setBounds(948, 424, 163, 27);
+		lblChatbotPersonality.setBounds(898, 422, 299, 27);
 		frame.getContentPane().add(lblChatbotPersonality);
 		
 		JLabel lblChatbotBrain = new JLabel("Chatbot 3: Brain Bot");
-		lblChatbotBrain.setBounds(948, 462, 147, 27);
+		lblChatbotBrain.setBounds(898, 460, 299, 27);
 		frame.getContentPane().add(lblChatbotBrain);
 		
 		JLabel lblChatbotEliza = new JLabel("Chatbot 4: Eliza Bot");
-		lblChatbotEliza.setBounds(948, 500, 127, 27);
+		lblChatbotEliza.setBounds(898, 498, 299, 27);
 		frame.getContentPane().add(lblChatbotEliza);
 		
 		JLabel lblEmobotAiaasBot = new JLabel("Emobot: AIaaS Bot ");
-		lblEmobotAiaasBot.setBounds(948, 348, 119, 27);
+		lblEmobotAiaasBot.setBounds(898, 346, 299, 27);
 		frame.getContentPane().add(lblEmobotAiaasBot);
 		
-		txtFullEpa = new JTextArea();
-		txtFullEpa.setText("EPA VALUES OF THE CONVERSATION WITH Emobot:");
-		txtFullEpa.setBounds(10, 11, 376, 655);
-		frame.getContentPane().add(txtFullEpa);
-		
 		btnEPAGraph0 = new JButton("Show Chat EPA");
-		btnEPAGraph0.setBounds(1078, 11, 119, 41);
+		btnEPAGraph0.setBounds(1054, 11, 143, 41);
 		frame.getContentPane().add(btnEPAGraph0);
 		
 		btnEPAGraph1 = new JButton("Show Chat EPA");
-		btnEPAGraph1.setBounds(1078, 63, 119, 41);
+		btnEPAGraph1.setBounds(1054, 63, 143, 41);
 		frame.getContentPane().add(btnEPAGraph1);
 		
 		btnEPAGraph2 = new JButton("Show Chat EPA");
-		btnEPAGraph2.setBounds(1078, 115, 119, 41);
+		btnEPAGraph2.setBounds(1054, 115, 143, 41);
 		frame.getContentPane().add(btnEPAGraph2);
 		
 		btnEPAGraph3 = new JButton("Show Chat EPA");
-		btnEPAGraph3.setBounds(1078, 167, 119, 41);
+		btnEPAGraph3.setBounds(1054, 167, 143, 41);
 		frame.getContentPane().add(btnEPAGraph3);
 		
 		btnEPAGraph4 = new JButton("Show Chat EPA");
-		btnEPAGraph4.setBounds(1078, 219, 119, 41);
+		btnEPAGraph4.setBounds(1054, 219, 143, 41);
 		frame.getContentPane().add(btnEPAGraph4);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 11, 376, 529);
+		frame.getContentPane().add(scrollPane);
+		
+		txtFullEpa = new JTextArea();
+		txtFullEpa.setLineWrap(true);
+		txtFullEpa.setText("EPA VALUES OF THE CONVERSATION WITH Emobot:");
+		scrollPane.setViewportView(txtFullEpa);
+		
+		scrollPane_1 = new JScrollPane();
+		scrollPane_1.setBounds(395, 11, 493, 529);
+		frame.getContentPane().add(scrollPane_1);
+		
+		txtFullChat = new JTextArea();
+		txtFullChat.setText("CONVERSATION WITH Emobot:");
+		scrollPane_1.setViewportView(txtFullChat);
 	}
 }
 
