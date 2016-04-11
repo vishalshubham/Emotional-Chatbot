@@ -25,11 +25,11 @@ import com.emobot.response.RespondAPI;
 public class EmobotUI {
 
 	private static final Color[] COLORS = new Color[]{
-		Color.RED,
-		Color.GREEN,
-		Color.ORANGE,
-		Color.BLUE,
-		Color.MAGENTA
+		new Color(255, 0, 0), // Red
+		new Color(0, 153, 0), // Dark Green
+		new Color(255, 128, 0), // Dark yellow
+		new Color(0, 0, 153), // Dark Blue
+		new Color(153, 0, 0), // Dark Red
 	};
 	
 	private JFrame frame;
