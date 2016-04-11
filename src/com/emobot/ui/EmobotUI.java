@@ -24,13 +24,8 @@ import com.emobot.response.RespondAPI;
 
 public class EmobotUI {
 
-	private static final Color[] COLORS = new Color[]{
-		new Color(255, 0, 0), // Red
-		new Color(0, 153, 0), // Dark Green
-		new Color(255, 128, 0), // Dark yellow
-		new Color(0, 0, 153), // Dark Blue
-		new Color(153, 0, 0), // Dark Red
-	};
+	private static final Color RED_COLOR = new Color(255, 0, 0); // Red
+	private static final Color BLUE_COLOR = new Color(0, 0, 153); // Dark Blue;
 	
 	private JFrame frame;
 	private JTextField txtWriteYourMessage;
@@ -119,7 +114,7 @@ public class EmobotUI {
 					EPANode epaNode = EPAOutput.getEPAValue(msg);
 					txtFullEpa.setText(txtFullEpa.getText() + "\n YOU: " + epaNode);
 					txtFullChat.setText(txtFullChat.getText() + "\n YOU: " + msg);
-					setColor(txtFullChat, txtFullEpa, COLORS[0]); // Red for Emobot
+					setColor(txtFullChat, txtFullEpa, BLUE_COLOR); // Red for Emobot
 					txtWriteYourMessage.setText("");
 					lblNewLabel.setText("Bot is typing ...");
 					
@@ -166,7 +161,6 @@ public class EmobotUI {
 						EPANode tempNode = EPAOutput.getEPAValue(response);
 						txtFullEpa.setText(txtFullEpa.getText() + "\n BOT: " + tempNode);
 						txtFullChat.setText(txtFullChat.getText() + "\n BOT: " + response);
-						setColor(txtFullChat, txtFullEpa, COLORS[1]);
 						fullChat1 = txtFullChat.getText();
 						fullEpa1 = txtFullEpa.getText();
 						list1.add(epaNode);
@@ -178,7 +172,6 @@ public class EmobotUI {
 						EPANode tempNode = EPAOutput.getEPAValue(response);
 						txtFullEpa.setText(txtFullEpa.getText() + "\n BOT: " + tempNode);
 						txtFullChat.setText(txtFullChat.getText() + "\n BOT: " + response);
-						setColor(txtFullChat, txtFullEpa, COLORS[2]);
 						fullChat2 = txtFullChat.getText();
 						fullEpa2 = txtFullEpa.getText();
 						list2.add(epaNode);
@@ -190,7 +183,6 @@ public class EmobotUI {
 						EPANode tempNode = EPAOutput.getEPAValue(response);
 						txtFullEpa.setText(txtFullEpa.getText() + "\n BOT: " + tempNode);
 						txtFullChat.setText(txtFullChat.getText() + "\n BOT: " + response);
-						setColor(txtFullChat, txtFullEpa, COLORS[3]);
 						fullChat3 = txtFullChat.getText();
 						fullEpa3 = txtFullEpa.getText();
 						list3.add(epaNode);
@@ -202,7 +194,6 @@ public class EmobotUI {
 						EPANode tempNode = EPAOutput.getEPAValue(response);
 						txtFullEpa.setText(txtFullEpa.getText() + "\n BOT: " + tempNode);
 						txtFullChat.setText(txtFullChat.getText() + "\n BOT: " + response);
-						setColor(txtFullChat, txtFullEpa, COLORS[4]);
 						fullChat4 = txtFullChat.getText();
 						fullEpa4 = txtFullEpa.getText();
 						list4.add(epaNode);
@@ -234,7 +225,11 @@ public class EmobotUI {
 				context = 0;
 				txtFullChat.setText(fullChat0);
 				txtFullEpa.setText(fullEpa0);
-				setColor(txtFullChat, txtFullEpa, COLORS[0]);
+				setColor(btnChatbot0, btnEPAGraph0, RED_COLOR);
+				setColor(btnChatbot1, btnEPAGraph1, BLUE_COLOR);
+				setColor(btnChatbot2, btnEPAGraph2, BLUE_COLOR);
+				setColor(btnChatbot3, btnEPAGraph3, BLUE_COLOR);
+				setColor(btnChatbot4, btnEPAGraph4, BLUE_COLOR);
 			}
 		});
 		btnChatbot1.addActionListener(new ActionListener() {
@@ -244,7 +239,11 @@ public class EmobotUI {
 				context = 1;
 				txtFullChat.setText(fullChat1);
 				txtFullEpa.setText(fullEpa1);
-				setColor(txtFullChat, txtFullEpa, COLORS[1]);
+				setColor(btnChatbot0, btnEPAGraph0, BLUE_COLOR);
+				setColor(btnChatbot1, btnEPAGraph1, RED_COLOR);
+				setColor(btnChatbot2, btnEPAGraph2, BLUE_COLOR);
+				setColor(btnChatbot3, btnEPAGraph3, BLUE_COLOR);
+				setColor(btnChatbot4, btnEPAGraph4, BLUE_COLOR);
 			}
 		});
 		btnChatbot2.addActionListener(new ActionListener() {
@@ -254,7 +253,11 @@ public class EmobotUI {
 				context = 2;
 				txtFullChat.setText(fullChat2);
 				txtFullEpa.setText(fullEpa2);
-				setColor(txtFullChat, txtFullEpa, COLORS[2]);
+				setColor(btnChatbot0, btnEPAGraph0, BLUE_COLOR);
+				setColor(btnChatbot1, btnEPAGraph1, BLUE_COLOR);
+				setColor(btnChatbot2, btnEPAGraph2, RED_COLOR);
+				setColor(btnChatbot3, btnEPAGraph3, BLUE_COLOR);
+				setColor(btnChatbot4, btnEPAGraph4, BLUE_COLOR);
 			}
 		});
 		btnChatbot3.addActionListener(new ActionListener() {
@@ -264,7 +267,11 @@ public class EmobotUI {
 				context = 3;
 				txtFullChat.setText(fullChat3);
 				txtFullEpa.setText(fullEpa3);
-				setColor(txtFullChat, txtFullEpa, COLORS[3]);
+				setColor(btnChatbot0, btnEPAGraph0, BLUE_COLOR);
+				setColor(btnChatbot1, btnEPAGraph1, BLUE_COLOR);
+				setColor(btnChatbot2, btnEPAGraph2, BLUE_COLOR);
+				setColor(btnChatbot3, btnEPAGraph3, RED_COLOR);
+				setColor(btnChatbot4, btnEPAGraph4, BLUE_COLOR);
 			}
 		});
 		btnChatbot4.addActionListener(new ActionListener() {
@@ -274,7 +281,11 @@ public class EmobotUI {
 				context = 4;
 				txtFullChat.setText(fullChat4);
 				txtFullEpa.setText(fullEpa4);
-				setColor(txtFullChat, txtFullEpa, COLORS[4]);
+				setColor(btnChatbot0, btnEPAGraph0, BLUE_COLOR);
+				setColor(btnChatbot1, btnEPAGraph1, BLUE_COLOR);
+				setColor(btnChatbot2, btnEPAGraph2, BLUE_COLOR);
+				setColor(btnChatbot3, btnEPAGraph3, BLUE_COLOR);
+				setColor(btnChatbot4, btnEPAGraph4, RED_COLOR);
 			}
 		});
 		btnEPAGraph0.addActionListener(new ActionListener() {
@@ -287,7 +298,7 @@ public class EmobotUI {
 				listtt.add(list02);
 				listtt.add(list03);
 				listtt.add(list04);
-				getEPAChartEmobot(listtt, "Chatbot 1:");
+				getEPAChartEmobot(listtt, "Emobot:");
 			}
 		});
 		btnEPAGraph1.addActionListener(new ActionListener() {
@@ -441,32 +452,26 @@ public class EmobotUI {
 		
 		JLabel lblChatbotProgram_1 = new JLabel("Chatbot 1: Program O Bot");
 		lblChatbotProgram_1.setBounds(898, 384, 299, 27);
-		setColor(lblChatbotProgram_1, COLORS[1]);
 		frame.getContentPane().add(lblChatbotProgram_1);
 		
 		JLabel lblChatbotPersonality = new JLabel("Chatbot 2: Personality Forge Bot");
 		lblChatbotPersonality.setBounds(898, 422, 299, 27);
-		setColor(lblChatbotPersonality, COLORS[2]);
 		frame.getContentPane().add(lblChatbotPersonality);
 		
 		JLabel lblChatbotBrain = new JLabel("Chatbot 3: Brain Bot");
 		lblChatbotBrain.setBounds(898, 460, 299, 27);
-		setColor(lblChatbotBrain, COLORS[3]);
 		frame.getContentPane().add(lblChatbotBrain);
 		
 		JLabel lblChatbotEliza = new JLabel("Chatbot 4: Eliza Bot");
 		lblChatbotEliza.setBounds(898, 498, 299, 27);
-		setColor(lblChatbotEliza, COLORS[4]);
 		frame.getContentPane().add(lblChatbotEliza);
 		
 		JLabel lblEmobotAiaasBot = new JLabel("Emobot: AIaaS Bot ");
 		lblEmobotAiaasBot.setBounds(898, 346, 299, 27);
-		setColor(lblEmobotAiaasBot, COLORS[0]);
 		frame.getContentPane().add(lblEmobotAiaasBot);
 		
 		btnEPAGraph0 = new JButton("Show Chat EPA");
 		btnEPAGraph0.setBounds(1054, 11, 143, 41);
-		btnEPAGraph0.setForeground(COLORS[0]);
 		frame.getContentPane().add(btnEPAGraph0);
 		
 		btnEPAGraph1 = new JButton("Show Chat EPA");
@@ -485,11 +490,11 @@ public class EmobotUI {
 		btnEPAGraph4.setBounds(1054, 219, 143, 41);
 		frame.getContentPane().add(btnEPAGraph4);
 		
-		setColor(btnChatbot0, btnEPAGraph0, COLORS[0]);
-		setColor(btnChatbot1, btnEPAGraph1, COLORS[1]);
-		setColor(btnChatbot2, btnEPAGraph2, COLORS[2]);
-		setColor(btnChatbot3, btnEPAGraph3, COLORS[3]);
-		setColor(btnChatbot4, btnEPAGraph4, COLORS[4]);
+		setColor(btnChatbot0, btnEPAGraph0, RED_COLOR);
+		setColor(btnChatbot1, btnEPAGraph1, BLUE_COLOR);
+		setColor(btnChatbot2, btnEPAGraph2, BLUE_COLOR);
+		setColor(btnChatbot3, btnEPAGraph3, BLUE_COLOR);
+		setColor(btnChatbot4, btnEPAGraph4, BLUE_COLOR);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 11, 376, 529);
@@ -510,7 +515,7 @@ public class EmobotUI {
 		txtFullChat.setText("CONVERSATION WITH Emobot:");
 		scrollPane_1.setViewportView(txtFullChat);
 		
-		setColor(txtFullChat, txtFullEpa, COLORS[0]);
+		setColor(txtFullChat, txtFullEpa, BLUE_COLOR);
 	}
 }
 
