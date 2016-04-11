@@ -92,9 +92,10 @@ public class EmobotUI {
 		tArea2.setForeground(color);
 	}
 	
-	private void setColor(JButton btn1, JButton btn2, Color color) {
-		btn1.setForeground(color);
-		btn2.setForeground(color);
+	private void setColor(Color color, JButton...jbuttons) {
+		for(JButton btn : jbuttons) {
+			btn.setForeground(color);
+		}
 	}
 	
 	private void setColor(JLabel lbl, Color color) {
@@ -225,11 +226,11 @@ public class EmobotUI {
 				context = 0;
 				txtFullChat.setText(fullChat0);
 				txtFullEpa.setText(fullEpa0);
-				setColor(btnChatbot0, btnEPAGraph0, RED_COLOR);
-				setColor(btnChatbot1, btnEPAGraph1, BLUE_COLOR);
-				setColor(btnChatbot2, btnEPAGraph2, BLUE_COLOR);
-				setColor(btnChatbot3, btnEPAGraph3, BLUE_COLOR);
-				setColor(btnChatbot4, btnEPAGraph4, BLUE_COLOR);
+				setColor(RED_COLOR, btnChatbot0, btnEPAGraph0);
+				setColor(BLUE_COLOR, btnChatbot1, btnEPAGraph1,
+										btnChatbot2, btnEPAGraph2,
+										btnChatbot3, btnEPAGraph3,
+										btnChatbot4, btnEPAGraph4);
 			}
 		});
 		btnChatbot1.addActionListener(new ActionListener() {
@@ -239,11 +240,12 @@ public class EmobotUI {
 				context = 1;
 				txtFullChat.setText(fullChat1);
 				txtFullEpa.setText(fullEpa1);
-				setColor(btnChatbot0, btnEPAGraph0, BLUE_COLOR);
-				setColor(btnChatbot1, btnEPAGraph1, RED_COLOR);
-				setColor(btnChatbot2, btnEPAGraph2, BLUE_COLOR);
-				setColor(btnChatbot3, btnEPAGraph3, BLUE_COLOR);
-				setColor(btnChatbot4, btnEPAGraph4, BLUE_COLOR);
+				
+				setColor(RED_COLOR, btnChatbot1, btnEPAGraph1);
+				setColor(BLUE_COLOR, btnChatbot0, btnEPAGraph0,
+										btnChatbot2, btnEPAGraph2,
+										btnChatbot3, btnEPAGraph3,
+										btnChatbot4, btnEPAGraph4);
 			}
 		});
 		btnChatbot2.addActionListener(new ActionListener() {
@@ -253,11 +255,11 @@ public class EmobotUI {
 				context = 2;
 				txtFullChat.setText(fullChat2);
 				txtFullEpa.setText(fullEpa2);
-				setColor(btnChatbot0, btnEPAGraph0, BLUE_COLOR);
-				setColor(btnChatbot1, btnEPAGraph1, BLUE_COLOR);
-				setColor(btnChatbot2, btnEPAGraph2, RED_COLOR);
-				setColor(btnChatbot3, btnEPAGraph3, BLUE_COLOR);
-				setColor(btnChatbot4, btnEPAGraph4, BLUE_COLOR);
+				setColor(RED_COLOR, btnChatbot2, btnEPAGraph2);
+				setColor(BLUE_COLOR, btnChatbot0, btnEPAGraph0,
+										btnChatbot1, btnEPAGraph1,
+										btnChatbot3, btnEPAGraph3,
+										btnChatbot4, btnEPAGraph4);
 			}
 		});
 		btnChatbot3.addActionListener(new ActionListener() {
@@ -267,11 +269,11 @@ public class EmobotUI {
 				context = 3;
 				txtFullChat.setText(fullChat3);
 				txtFullEpa.setText(fullEpa3);
-				setColor(btnChatbot0, btnEPAGraph0, BLUE_COLOR);
-				setColor(btnChatbot1, btnEPAGraph1, BLUE_COLOR);
-				setColor(btnChatbot2, btnEPAGraph2, BLUE_COLOR);
-				setColor(btnChatbot3, btnEPAGraph3, RED_COLOR);
-				setColor(btnChatbot4, btnEPAGraph4, BLUE_COLOR);
+				setColor(RED_COLOR, btnChatbot3, btnEPAGraph3);
+				setColor(BLUE_COLOR, btnChatbot0, btnEPAGraph0,
+										btnChatbot1, btnEPAGraph1,
+										btnChatbot2, btnEPAGraph2,
+										btnChatbot4, btnEPAGraph4);
 			}
 		});
 		btnChatbot4.addActionListener(new ActionListener() {
@@ -281,11 +283,11 @@ public class EmobotUI {
 				context = 4;
 				txtFullChat.setText(fullChat4);
 				txtFullEpa.setText(fullEpa4);
-				setColor(btnChatbot0, btnEPAGraph0, BLUE_COLOR);
-				setColor(btnChatbot1, btnEPAGraph1, BLUE_COLOR);
-				setColor(btnChatbot2, btnEPAGraph2, BLUE_COLOR);
-				setColor(btnChatbot3, btnEPAGraph3, BLUE_COLOR);
-				setColor(btnChatbot4, btnEPAGraph4, RED_COLOR);
+				setColor(RED_COLOR, btnChatbot4, btnEPAGraph4);
+				setColor(BLUE_COLOR, btnChatbot0, btnEPAGraph0,
+										btnChatbot1, btnEPAGraph1,
+										btnChatbot2, btnEPAGraph2,
+										btnChatbot3, btnEPAGraph3);
 			}
 		});
 		btnEPAGraph0.addActionListener(new ActionListener() {
@@ -490,11 +492,11 @@ public class EmobotUI {
 		btnEPAGraph4.setBounds(1054, 219, 143, 41);
 		frame.getContentPane().add(btnEPAGraph4);
 		
-		setColor(btnChatbot0, btnEPAGraph0, RED_COLOR);
-		setColor(btnChatbot1, btnEPAGraph1, BLUE_COLOR);
-		setColor(btnChatbot2, btnEPAGraph2, BLUE_COLOR);
-		setColor(btnChatbot3, btnEPAGraph3, BLUE_COLOR);
-		setColor(btnChatbot4, btnEPAGraph4, BLUE_COLOR);
+		setColor(RED_COLOR, btnChatbot0, btnEPAGraph0);
+		setColor(BLUE_COLOR, btnChatbot1, btnEPAGraph1,
+								btnChatbot2, btnEPAGraph2,
+								btnChatbot3, btnEPAGraph3,
+								btnChatbot4, btnEPAGraph4);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 11, 376, 529);
