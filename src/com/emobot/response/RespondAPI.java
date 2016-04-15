@@ -52,4 +52,13 @@ public class RespondAPI {
 		String response = obj1.getString("message");
 		return response;
 	}
+	public String getJsonResponseFromChatbot5(){
+		Map<String, String> inputParams = new HashMap<String, String>();
+		inputParams.put("message", str);
+		String jsonString = RestClient.getChatResponse("https://calm-cliffs-49578.herokuapp.com/alice_bot/get_response", inputParams);
+		JSONObject obj = new JSONObject(jsonString);
+		JSONObject obj1 = obj.getJSONObject("response");
+		String response = obj1.getString("message");
+		return response;
+	}
 }

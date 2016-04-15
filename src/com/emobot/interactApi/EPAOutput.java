@@ -26,12 +26,14 @@ public class EPAOutput {
 		}
 		
 		if((eValueTotal==0.0) && pValueTotal==0.0 && aValueTotal==0.0){
+			System.out.println("EPA: [E:" +0 + " P:"+0 + " A:"+0 +"]");
 			return null;
 		}
 		else{
 			eValueTotal = eValueTotal/validCount;
 			pValueTotal = pValueTotal/validCount;
 			aValueTotal = aValueTotal/validCount;
+			System.out.println("EPA: [E:" +eValueTotal + " P:"+pValueTotal + " A:"+aValueTotal +"]");
 			return new EPANode(eValueTotal, pValueTotal, aValueTotal);
 		}
 	}
@@ -66,7 +68,7 @@ public class EPAOutput {
 			return minIndex;
 		}
 		
-		return 2;
+		return 4;
 	}
 
 }

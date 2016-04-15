@@ -36,28 +36,33 @@ public class EmobotUI {
 	private String fullChat2 = "CONVERSATION WITH Chatbot 2:";
 	private String fullChat3 = "CONVERSATION WITH Chatbot 3:";
 	private String fullChat4 = "CONVERSATION WITH Chatbot 4:";
+	private String fullChat5 = "CONVERSATION WITH Chatbot 5:";
 	
 	private String fullEpa0 = "EPA VALUES FOR CONVERSATION WITH Emobot:";
 	private String fullEpa1 = "EPA VALUES FOR CONVERSATION WITH Chatbot 1:";
 	private String fullEpa2 = "EPA VALUES FOR CONVERSATION WITH Chatbot 2:";
 	private String fullEpa3 = "EPA VALUES FOR CONVERSATION WITH Chatbot 3:";
 	private String fullEpa4 = "EPA VALUES FOR CONVERSATION WITH Chatbot 4:";
+	private String fullEpa5 = "EPA VALUES FOR CONVERSATION WITH Chatbot 5:";
 	
 	private JButton btnChatbot0;
 	private JButton btnChatbot1;
 	private JButton btnChatbot2;
 	private JButton btnChatbot3;
 	private JButton btnChatbot4;
+	private JButton btnChatbot5;
 	
 	private ArrayList<EPANode> list01 = new ArrayList<EPANode>();
 	private ArrayList<EPANode> list02 = new ArrayList<EPANode>();
 	private ArrayList<EPANode> list03 = new ArrayList<EPANode>();
 	private ArrayList<EPANode> list04 = new ArrayList<EPANode>();
+	private ArrayList<EPANode> list05 = new ArrayList<EPANode>();
 	private ArrayList<EPANode> list00 = new ArrayList<EPANode>();
 	private ArrayList<EPANode> list1 = new ArrayList<EPANode>();
 	private ArrayList<EPANode> list2 = new ArrayList<EPANode>();
 	private ArrayList<EPANode> list3 = new ArrayList<EPANode>();
 	private ArrayList<EPANode> list4 = new ArrayList<EPANode>();
+	private ArrayList<EPANode> list5 = new ArrayList<EPANode>();
 	
 	private JButton btnSendMessage;
 	private JButton btnEPAGraph0;
@@ -65,6 +70,7 @@ public class EmobotUI {
 	private JButton btnEPAGraph2;
 	private JButton btnEPAGraph3;
 	private JButton btnEPAGraph4;
+	private JButton btnEPAGraph5;
 	private JScrollPane scrollPane_1;
 	private JTextArea txtFullChat;
 	private JTextArea txtFullEpa;
@@ -112,6 +118,7 @@ public class EmobotUI {
 				// TODO Auto-generated method stub
 				if(isValidInput()){
 					String msg = txtWriteYourMessage.getText();
+					System.out.println(msg);
 					EPANode epaNode = EPAOutput.getEPAValue(msg);
 					txtFullEpa.setText(txtFullEpa.getText() + "\n YOU: " + epaNode);
 					txtFullChat.setText(txtFullChat.getText() + "\n YOU: " + msg);
@@ -124,21 +131,30 @@ public class EmobotUI {
 						ArrayList<String> responses = new ArrayList<String>();
 						ArrayList<EPANode> responseEpas = new ArrayList<EPANode>();
 						String response1 = respondAPI.getJsonResponseFromChatbot1();
+						System.out.println(response1);
 						EPANode tempNode1 = EPAOutput.getEPAValue(response1);
 						String response2 = respondAPI.getJsonResponseFromChatbot2();
+						System.out.println(response2);
 						EPANode tempNode2 = EPAOutput.getEPAValue(response2);
 						String response3 = respondAPI.getJsonResponseFromChatbot3();
+						System.out.println(response3);
 						EPANode tempNode3 = EPAOutput.getEPAValue(response3);
 						String response4 = respondAPI.getJsonResponseFromChatbot4();
+						System.out.println(response4);
 						EPANode tempNode4 = EPAOutput.getEPAValue(response4);
+						String response5 = respondAPI.getJsonResponseFromChatbot5();
+						System.out.println(response5);
+						EPANode tempNode5 = EPAOutput.getEPAValue(response5);
 						responses.add(response1);
 						responses.add(response2);
 						responses.add(response3);
 						responses.add(response4);
+						responses.add(response5);
 						responseEpas.add(tempNode1);
 						responseEpas.add(tempNode2);
 						responseEpas.add(tempNode3);
 						responseEpas.add(tempNode4);
+						responseEpas.add(tempNode5);
 						
 						int index = EPAOutput.getClosest(responseEpas, epaNode);
 						txtFullEpa.setText(txtFullEpa.getText() + "\n BOT: " + responseEpas.get(index));
@@ -150,11 +166,13 @@ public class EmobotUI {
 						list02.add(epaNode);
 						list03.add(epaNode);
 						list04.add(epaNode);
+						list05.add(epaNode);
 						list00.add(responseEpas.get(index));
 						list01.add(tempNode1);
 						list02.add(tempNode2);
 						list03.add(tempNode3);
 						list04.add(tempNode4);
+						list05.add(tempNode5);
 					}
 					else if(context==1){
 						RespondAPI respondAPI = new RespondAPI(msg);
@@ -189,7 +207,7 @@ public class EmobotUI {
 						list3.add(epaNode);
 						list3.add(tempNode);
 					}
-					else{
+					else if(context==4){
 						RespondAPI respondAPI = new RespondAPI(msg);
 						String response = respondAPI.getJsonResponseFromChatbot4();
 						EPANode tempNode = EPAOutput.getEPAValue(response);
@@ -199,6 +217,17 @@ public class EmobotUI {
 						fullEpa4 = txtFullEpa.getText();
 						list4.add(epaNode);
 						list4.add(tempNode);
+					}
+					else{
+						RespondAPI respondAPI = new RespondAPI(msg);
+						String response = respondAPI.getJsonResponseFromChatbot5();
+						EPANode tempNode = EPAOutput.getEPAValue(response);
+						txtFullEpa.setText(txtFullEpa.getText() + "\n BOT: " + tempNode);
+						txtFullChat.setText(txtFullChat.getText() + "\n BOT: " + response);
+						fullChat5 = txtFullChat.getText();
+						fullEpa5 = txtFullEpa.getText();
+						list5.add(epaNode);
+						list5.add(tempNode);
 					}
 					lblNewLabel.setText("");
 				}
@@ -230,7 +259,8 @@ public class EmobotUI {
 				setColor(BLUE_COLOR, btnChatbot1, btnEPAGraph1,
 										btnChatbot2, btnEPAGraph2,
 										btnChatbot3, btnEPAGraph3,
-										btnChatbot4, btnEPAGraph4);
+										btnChatbot4, btnEPAGraph4,
+										btnChatbot5, btnEPAGraph5);
 			}
 		});
 		btnChatbot1.addActionListener(new ActionListener() {
@@ -245,7 +275,8 @@ public class EmobotUI {
 				setColor(BLUE_COLOR, btnChatbot0, btnEPAGraph0,
 										btnChatbot2, btnEPAGraph2,
 										btnChatbot3, btnEPAGraph3,
-										btnChatbot4, btnEPAGraph4);
+										btnChatbot4, btnEPAGraph4,
+										btnChatbot5, btnEPAGraph5);
 			}
 		});
 		btnChatbot2.addActionListener(new ActionListener() {
@@ -259,7 +290,8 @@ public class EmobotUI {
 				setColor(BLUE_COLOR, btnChatbot0, btnEPAGraph0,
 										btnChatbot1, btnEPAGraph1,
 										btnChatbot3, btnEPAGraph3,
-										btnChatbot4, btnEPAGraph4);
+										btnChatbot4, btnEPAGraph4,
+										btnChatbot5, btnEPAGraph5);
 			}
 		});
 		btnChatbot3.addActionListener(new ActionListener() {
@@ -273,7 +305,8 @@ public class EmobotUI {
 				setColor(BLUE_COLOR, btnChatbot0, btnEPAGraph0,
 										btnChatbot1, btnEPAGraph1,
 										btnChatbot2, btnEPAGraph2,
-										btnChatbot4, btnEPAGraph4);
+										btnChatbot4, btnEPAGraph4,
+										btnChatbot5, btnEPAGraph5);
 			}
 		});
 		btnChatbot4.addActionListener(new ActionListener() {
@@ -287,7 +320,23 @@ public class EmobotUI {
 				setColor(BLUE_COLOR, btnChatbot0, btnEPAGraph0,
 										btnChatbot1, btnEPAGraph1,
 										btnChatbot2, btnEPAGraph2,
-										btnChatbot3, btnEPAGraph3);
+										btnChatbot3, btnEPAGraph3,
+										btnChatbot5, btnEPAGraph5);
+			}
+		});
+		btnChatbot5.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				context = 5;
+				txtFullChat.setText(fullChat5);
+				txtFullEpa.setText(fullEpa5);
+				setColor(RED_COLOR, btnChatbot5, btnEPAGraph5);
+				setColor(BLUE_COLOR, btnChatbot0, btnEPAGraph0,
+										btnChatbot1, btnEPAGraph1,
+										btnChatbot2, btnEPAGraph2,
+										btnChatbot3, btnEPAGraph3,
+										btnChatbot4, btnEPAGraph4);
 			}
 		});
 		btnEPAGraph0.addActionListener(new ActionListener() {
@@ -300,6 +349,7 @@ public class EmobotUI {
 				listtt.add(list02);
 				listtt.add(list03);
 				listtt.add(list04);
+				listtt.add(list05);
 				getEPAChartEmobot(listtt, "Emobot:");
 			}
 		});
@@ -329,6 +379,13 @@ public class EmobotUI {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				getEPAChart(list4, "Chatbot 4:");
+			}
+		});
+		btnEPAGraph5.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				getEPAChart(list5, "Chatbot 5:");
 			}
 		});
 	}
@@ -441,6 +498,10 @@ public class EmobotUI {
 		btnChatbot4.setBounds(898, 219, 153, 41);
 		frame.getContentPane().add(btnChatbot4);
 		
+		btnChatbot5 = new JButton("Chatbot 5");
+		btnChatbot5.setBounds(898, 271, 153, 41);
+		frame.getContentPane().add(btnChatbot5);
+		
 		// Action message Label
 		lblNewLabel = new JLabel("");
 		lblNewLabel.setBounds(10, 551, 493, 14);
@@ -449,27 +510,27 @@ public class EmobotUI {
 		// Index Labels
 		JLabel lblChatbotProgram = new JLabel("Index:");
 		lblChatbotProgram.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblChatbotProgram.setBounds(898, 308, 299, 27);
+		lblChatbotProgram.setBounds(898, 323, 299, 27);
 		frame.getContentPane().add(lblChatbotProgram);
 		
 		JLabel lblChatbotProgram_1 = new JLabel("Chatbot 1: Program O Bot");
-		lblChatbotProgram_1.setBounds(898, 384, 299, 27);
+		lblChatbotProgram_1.setBounds(898, 377, 299, 27);
 		frame.getContentPane().add(lblChatbotProgram_1);
 		
 		JLabel lblChatbotPersonality = new JLabel("Chatbot 2: Personality Forge Bot");
-		lblChatbotPersonality.setBounds(898, 422, 299, 27);
+		lblChatbotPersonality.setBounds(898, 404, 299, 27);
 		frame.getContentPane().add(lblChatbotPersonality);
 		
 		JLabel lblChatbotBrain = new JLabel("Chatbot 3: Brain Bot");
-		lblChatbotBrain.setBounds(898, 460, 299, 27);
+		lblChatbotBrain.setBounds(898, 432, 299, 27);
 		frame.getContentPane().add(lblChatbotBrain);
 		
 		JLabel lblChatbotEliza = new JLabel("Chatbot 4: Eliza Bot");
-		lblChatbotEliza.setBounds(898, 498, 299, 27);
+		lblChatbotEliza.setBounds(898, 459, 299, 27);
 		frame.getContentPane().add(lblChatbotEliza);
 		
 		JLabel lblEmobotAiaasBot = new JLabel("Emobot: AIaaS Bot ");
-		lblEmobotAiaasBot.setBounds(898, 346, 299, 27);
+		lblEmobotAiaasBot.setBounds(898, 350, 299, 27);
 		frame.getContentPane().add(lblEmobotAiaasBot);
 		
 		btnEPAGraph0 = new JButton("Show Chat EPA");
@@ -492,11 +553,16 @@ public class EmobotUI {
 		btnEPAGraph4.setBounds(1054, 219, 143, 41);
 		frame.getContentPane().add(btnEPAGraph4);
 		
+		btnEPAGraph5 = new JButton("Show Chat EPA");
+		btnEPAGraph5.setBounds(1054, 271, 143, 41);
+		frame.getContentPane().add(btnEPAGraph5);
+		
 		setColor(RED_COLOR, btnChatbot0, btnEPAGraph0);
-		setColor(BLUE_COLOR, btnChatbot1, btnEPAGraph1,
-								btnChatbot2, btnEPAGraph2,
-								btnChatbot3, btnEPAGraph3,
-								btnChatbot4, btnEPAGraph4);
+		setColor(BLUE_COLOR, btnChatbot1, btnEPAGraph1);
+		setColor(BLUE_COLOR, btnChatbot2, btnEPAGraph2);
+		setColor(BLUE_COLOR, btnChatbot3, btnEPAGraph3);
+		setColor(BLUE_COLOR, btnChatbot4, btnEPAGraph4);
+		setColor(BLUE_COLOR, btnChatbot5, btnEPAGraph5);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 11, 376, 529);
@@ -518,6 +584,10 @@ public class EmobotUI {
 		scrollPane_1.setViewportView(txtFullChat);
 		
 		setColor(txtFullChat, txtFullEpa, BLUE_COLOR);
+		
+		JLabel lblChatbotEliza_1 = new JLabel("Chatbot 5: Alice Bot");
+		lblChatbotEliza_1.setBounds(898, 485, 299, 27);
+		frame.getContentPane().add(lblChatbotEliza_1);
 	}
 }
 

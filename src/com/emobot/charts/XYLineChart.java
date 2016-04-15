@@ -46,6 +46,8 @@ public class XYLineChart extends JFrame {
 
 		JFreeChart chart = ChartFactory.createXYLineChart(chartTitle,
 				xAxisLabel, yAxisLabel, dataset);
+
+        chart.setBackgroundPaint(Color.WHITE);
 		setSize(300, 200);
 		XYPlot plot = chart.getXYPlot();
 		XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer();
