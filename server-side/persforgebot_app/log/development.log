@@ -1,0 +1,221 @@
+
+
+Started GET "/pers_forge_bot/get_response?message=How%20are%20you?" for ::1 at 2016-04-07 01:48:46 -0400
+Processing by PersForgeBotController#get_response as HTML
+  Parameters: {"message"=>"How are you?"}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+NameError (uninitialized constant PersForgeBotController::PForgeBot):
+  app/controllers/pers_forge_bot_controller.rb:12:in `get_response'
+
+
+  Rendered /Users/bastin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered /Users/bastin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /Users/bastin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/bastin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (77.1ms)
+  Rendered /Users/bastin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/bastin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/bastin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/bastin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.1ms)
+  Rendered /Users/bastin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (76.8ms)
+  Rendered /Users/bastin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/bastin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/bastin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (163.4ms)
+
+
+Started GET "/pers_forge_bot/get_response?message=How%20are%20you?" for ::1 at 2016-04-07 01:55:22 -0400
+Processing by PersForgeBotController#get_response as HTML
+  Parameters: {"message"=>"How are you?"}
+Completed 200 OK in 474ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pers_forge_bot/get_response?message=How%20are%20you" for ::1 at 2016-04-07 01:55:45 -0400
+Processing by PersForgeBotController#get_response as HTML
+  Parameters: {"message"=>"How are you"}
+Completed 200 OK in 2437ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pers_forge_bot/get_response?message=How%20are%20you" for ::1 at 2016-04-07 01:57:44 -0400
+Processing by PersForgeBotController#get_response as HTML
+  Parameters: {"message"=>"How are you"}
+Completed 200 OK in 268ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pers_forge_bot/get_response?message=How%20are%20you" for ::1 at 2016-04-07 01:59:54 -0400
+Processing by PersForgeBotController#get_response as HTML
+  Parameters: {"message"=>"How are you"}
+Completed 200 OK in 239ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pers_forge_bot/get_response?message=How%20are%20you" for ::1 at 2016-04-07 02:01:06 -0400
+Processing by PersForgeBotController#get_response as HTML
+  Parameters: {"message"=>"How are you"}
+Completed 200 OK in 811ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pers_forge_bot/get_response?message=what%20is%20your%20name?" for ::1 at 2016-04-07 02:01:29 -0400
+Processing by PersForgeBotController#get_response as HTML
+  Parameters: {"message"=>"what is your name?"}
+Completed 200 OK in 250ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pers_forge_bot/get_response?message=do%20you%20like%20your%20name?" for ::1 at 2016-04-07 02:01:47 -0400
+Processing by PersForgeBotController#get_response as HTML
+  Parameters: {"message"=>"do you like your name?"}
+Completed 200 OK in 248ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pers_forge_bot/get_response?message=you%20are%20too%20good" for ::1 at 2016-04-07 02:01:58 -0400
+Processing by PersForgeBotController#get_response as HTML
+  Parameters: {"message"=>"you are too good"}
+Completed 200 OK in 308ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pers_forge_bot/get_response?message=i%20love%20chocolates" for ::1 at 2016-04-07 02:02:16 -0400
+Processing by PersForgeBotController#get_response as HTML
+  Parameters: {"message"=>"i love chocolates"}
+Completed 200 OK in 261ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pers_forge_bot/get_response?message=in%20my%20childhood%20babes" for ::1 at 2016-04-07 02:02:26 -0400
+Processing by PersForgeBotController#get_response as HTML
+  Parameters: {"message"=>"in my childhood babes"}
+Completed 200 OK in 288ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pers_forge_bot/get_response?message=no%20i%20am%20good" for ::1 at 2016-04-07 02:02:35 -0400
+Processing by PersForgeBotController#get_response as HTML
+  Parameters: {"message"=>"no i am good"}
+Completed 200 OK in 212ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pers_forge_bot/get_response?message=going%20good" for ::1 at 2016-04-07 12:39:22 -0400
+Processing by PersForgeBotController#get_response as HTML
+  Parameters: {"message"=>"going good"}
+Completed 200 OK in 240ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/program_o_bot/get_response?message=going%20good" for ::1 at 2016-04-07 12:44:44 -0400
+Processing by ProgramOBotController#get_response as HTML
+  Parameters: {"message"=>"going good"}
+Completed 200 OK in 1801ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/program_o_bot/get_response?message=going%20good&conv_id=c1234" for ::1 at 2016-04-07 12:45:06 -0400
+Processing by ProgramOBotController#get_response as HTML
+  Parameters: {"message"=>"going good", "conv_id"=>"c1234"}
+Completed 200 OK in 4318ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/program_o_bot/get_response?message=How%20are%20you&conv_id=c1234" for ::1 at 2016-04-07 12:45:18 -0400
+Processing by ProgramOBotController#get_response as HTML
+  Parameters: {"message"=>"How are you", "conv_id"=>"c1234"}
+Completed 200 OK in 3127ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/program_o_bot/get_response?message=How%20are%20you&convo_id=c1235" for ::1 at 2016-04-07 12:46:16 -0400
+Processing by ProgramOBotController#get_response as HTML
+  Parameters: {"message"=>"How are you", "convo_id"=>"c1235"}
+Completed 200 OK in 2360ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/program_o_bot/get_response?message=I%20am%20doing%20good&convo_id=c1235" for ::1 at 2016-04-07 12:46:30 -0400
+Processing by ProgramOBotController#get_response as HTML
+  Parameters: {"message"=>"I am doing good", "convo_id"=>"c1235"}
+Completed 200 OK in 2730ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/program_o_bot/get_response?message=I%20am%20starting%20a%20new%20conversation&convo_id=c1235" for ::1 at 2016-04-07 12:47:35 -0400
+Processing by ProgramOBotController#get_response as HTML
+  Parameters: {"message"=>"I am starting a new conversation", "convo_id"=>"c1235"}
+Completed 200 OK in 3497ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pers_forge_bot/get_response?message=I%20am%20starting%20a%20new%20conversation" for ::1 at 2016-04-07 12:47:44 -0400
+Processing by PersForgeBotController#get_response as HTML
+  Parameters: {"message"=>"I am starting a new conversation"}
+Completed 200 OK in 771ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/program_o_bot/get_response?message=I%20am%20starting%20a%20new%20conversation&convo_id=c1236" for ::1 at 2016-04-07 12:47:55 -0400
+Processing by ProgramOBotController#get_response as HTML
+  Parameters: {"message"=>"I am starting a new conversation", "convo_id"=>"c1236"}
+Completed 200 OK in 5545ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pers_forge_bot/get_response?message=How%20are%20you?" for ::1 at 2016-04-07 17:15:08 -0400
+Processing by PersForgeBotController#get_response as HTML
+  Parameters: {"message"=>"How are you?"}
+Completed 200 OK in 508ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/program_o_bot/get_response?message=How%20are%20you?" for ::1 at 2016-04-07 17:15:28 -0400
+Processing by ProgramOBotController#get_response as HTML
+  Parameters: {"message"=>"How are you?"}
+Completed 500 Internal Server Error in 340ms (ActiveRecord: 0.0ms)
+
+JSON::ParserError (795: unexpected token at 'Program O has encountered a problem with connecting to the database. With any luck, the following message will help: SQLSTATE[HY000] [2002] Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (111)'):
+  app/controllers/program_o_bot_controller.rb:15:in `get_response'
+
+
+  Rendered /Users/bastin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (6.2ms)
+  Rendered /Users/bastin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/bastin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/bastin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.3ms)
+  Rendered /Users/bastin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (104.5ms)
+
+
+Started GET "/program_o_bot/get_response?message=How%20are%20you" for ::1 at 2016-04-07 17:16:59 -0400
+Processing by ProgramOBotController#get_response as HTML
+  Parameters: {"message"=>"How are you"}
+Completed 500 Internal Server Error in 265ms (ActiveRecord: 0.0ms)
+
+JSON::ParserError (795: unexpected token at 'Program O has encountered a problem with connecting to the database. With any luck, the following message will help: SQLSTATE[HY000] [2002] Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (111)'):
+  app/controllers/program_o_bot_controller.rb:15:in `get_response'
+
+
+  Rendered /Users/bastin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (7.1ms)
+  Rendered /Users/bastin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/bastin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/bastin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /Users/bastin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (106.0ms)
+
+
+Started GET "/brain_bot/get_response?message=How%20are%20you" for ::1 at 2016-04-07 17:17:21 -0400
+Processing by BrainBotController#get_response as HTML
+  Parameters: {"message"=>"How are you"}
+Completed 200 OK in 604ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/eliza_bot/get_response?message=How%20are%20you" for ::1 at 2016-04-07 17:17:35 -0400
+Processing by ElizaBotController#get_response as HTML
+  Parameters: {"message"=>"How are you"}
+Completed 200 OK in 742ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/program_o_bot/get_response?message=How%20are%20you" for ::1 at 2016-04-07 17:18:01 -0400
+Processing by ProgramOBotController#get_response as HTML
+  Parameters: {"message"=>"How are you"}
+Completed 500 Internal Server Error in 262ms (ActiveRecord: 0.0ms)
+
+JSON::ParserError (795: unexpected token at 'Program O has encountered a problem with connecting to the database. With any luck, the following message will help: SQLSTATE[HY000] [2002] Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (111)'):
+  app/controllers/program_o_bot_controller.rb:15:in `get_response'
+
+
+  Rendered /Users/bastin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (7.6ms)
+  Rendered /Users/bastin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (4.2ms)
+  Rendered /Users/bastin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/bastin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.7ms)
+  Rendered /Users/bastin/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (94.7ms)
+
+
+Started GET "/brain_bot/get_response?message=cool" for ::1 at 2016-04-12 22:53:15 -0400
+Processing by BrainBotController#get_response as HTML
+  Parameters: {"message"=>"cool"}
+Completed 200 OK in 860ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/alice_bot/get_response?message=cool" for ::1 at 2016-04-12 22:53:22 -0400
+Processing by AliceBotController#get_response as HTML
+  Parameters: {"message"=>"cool"}
+Completed 200 OK in 275ms (Views: 0.2ms | ActiveRecord: 0.0ms)
