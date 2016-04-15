@@ -59,18 +59,21 @@ public class XYLineChart extends JFrame {
 			renderer.setSeriesPaint(2, Color.GRAY);
 			renderer.setSeriesPaint(3, Color.GRAY);
 			renderer.setSeriesPaint(4, Color.GRAY);
+			renderer.setSeriesPaint(5, Color.GRAY);
 		} else if (i == 2) {
 			renderer.setSeriesPaint(0, Color.YELLOW);
 			renderer.setSeriesPaint(1, Color.GRAY);
 			renderer.setSeriesPaint(2, Color.GRAY);
 			renderer.setSeriesPaint(3, Color.GRAY);
 			renderer.setSeriesPaint(4, Color.GRAY);
+			renderer.setSeriesPaint(5, Color.GRAY);
 		} else {
 			renderer.setSeriesPaint(0, Color.GREEN);
 			renderer.setSeriesPaint(1, Color.GRAY);
 			renderer.setSeriesPaint(2, Color.GRAY);
 			renderer.setSeriesPaint(3, Color.GRAY);
 			renderer.setSeriesPaint(4, Color.GRAY);
+			renderer.setSeriesPaint(5, Color.GRAY);
 		}
 		plot.setRenderer(renderer);
 
